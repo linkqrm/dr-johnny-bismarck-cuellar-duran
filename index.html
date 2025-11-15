@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ==========================================
+         META TAGS Y CONFIGURACIÓN BÁSICA
+         ========================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dr. Juan Pérez García - Ginecólogo y Obstetra especializado en salud femenina. Agenda tu cita en La Paz, Bolivia.">
+    <meta name="keywords" content="ginecólogo, obstetra, salud femenina, control prenatal, La Paz, Bolivia">
+    <meta name="author" content="Dr. Juan Pérez García">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Dr. Juan Pérez García - Ginecólogo y Obstetra">
+    <meta property="og:description" content="Atención médica profesional en ginecología y obstetricia">
+    <meta property="og:type" content="website">
+    
+    <title>Dr. Juan Pérez García - Ginecólogo y Obstetra | La Paz</title>
+    
+    <!-- ==========================================
+         FUENTES E ICONOS (CDN)
+         ========================================== -->
+    <!-- Google Fonts - Poppins para títulos, Open Sans para texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Archivo CSS principal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ==========================================
+         BOTÓN DE MODO OSCURO
+         Ubicado en posición fija para cambiar tema
+         ========================================== -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- ==========================================
+         BOTÓN WHATSAPP FLOTANTE
+         Siempre visible para contacto rápido
+         ========================================== -->
+    <a href="https://wa.me/59170123456?text=Hola,%20deseo%20agendar%20una%20cita" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ==========================================
+         BOTÓN SCROLL TO TOP
+         Aparece cuando el usuario hace scroll
+         ========================================== -->
+    <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ==========================================
+         HEADER / NAVEGACIÓN PRINCIPAL
+         Menú fijo con links a las secciones
+         ========================================== -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <!-- Logo / Nombre del Doctor -->
+                <div class="nav-logo">
+                    <i class="fas fa-user-md"></i>
+                    <span>Dr. {{NOMBRE_DOCTOR}}</span>
+                </div>
+
+                <!-- Menú de navegación -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li><a href="#contacto" class="btn btn-primary-nav">Agendar Cita</a></li>
+                </ul>
+
+                <!-- Botón hamburguesa para móvil -->
+                <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         SECCIÓN HERO / PRESENTACIÓN PRINCIPAL
+         Primera impresión - foto, nombre y CTA
+         ========================================== -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <!-- Foto del doctor -->
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="https://via.placeholder.com/300x300/2563EB/ffffff?text=Dr.+Foto" 
+                             alt="Dr. {{NOMBRE_DOCTOR}}"
+                             class="doctor-photo">
+                    </div>
+                </div>
+
+                <!-- Información principal -->
+                <div class="hero-text">
+                    <h1 class="hero-title">Dr. Juan Pérez García</h1>
+                    <p class="hero-subtitle">Ginecólogo - Obstetra</p>
+                    <p class="hero-cedula">Cédula Profesional: 1234567</p>
+                    <p class="hero-quote">
+                        <i class="fas fa-quote-left"></i>
+                        Comprometido con la salud integral de la mujer en cada etapa de su vida
+                        <i class="fas fa-quote-right"></i>
+                    </p>
+
+                    <!-- Botones de acción -->
+                    <div class="hero-buttons">
+                        <a href="#contacto" class="btn btn-primary btn-large">
+                            <i class="fas fa-calendar-check"></i>
+                            Agenda tu Consulta
+                        </a>
+                        <a href="https://wa.me/59170123456" class="btn btn-secondary btn-large" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN SOBRE MÍ
+         Biografía profesional y credenciales
+         ========================================== -->
+    <section class="about" id="sobre-mi">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre Mí</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="about-content">
+                <!-- Foto en consultorio -->
+                <div class="about-image" data-animate>
+                    <img src="https://via.placeholder.com/500x600/10B981/ffffff?text=Consultorio" 
+                         alt="Dr. en consultorio"
+                         class="consultorio-photo">
+                </div>
+
+                <!-- Biografía y credenciales -->
+                <div class="about-text" data-animate>
+                    <h3 class="about-name">Dr. Juan Pérez García</h3>
+                    
+                    <div class="bio-text">
+                        <p>
+                            Con más de 15 años de experiencia en ginecología y obstetricia, me dedico a 
+                            proporcionar atención médica integral y personalizada a cada una de mis pacientes. 
+                            Mi formación académica incluye estudios de medicina en la Universidad Mayor de San 
+                            Andrés y especialización en Ginecología y Obstetricia certificada por el Colegio 
+                            Médico de Bolivia.
+                        </p>
+                        <p>
+                            Mi enfoque se centra en crear un ambiente de confianza y empatía, donde cada mujer 
+                            se sienta escuchada y comprendida. Creo firmemente en la medicina preventiva y en 
+                            la educación sanitaria como pilares fundamentales para el bienestar femenino.
+                        </p>
+                        <p>
+                            Me mantengo en constante actualización mediante cursos, seminarios y congresos 
+                            nacionales e internacionales, lo que me permite ofrecer los tratamientos más 
+                            modernos y efectivos, siempre basados en evidencia científica.
+                        </p>
+                    </div>
+
+                    <!-- Certificaciones -->
+                    <div class="credentials">
+                        <div class="credential-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Educación</h4>
+                                <p>Universidad Mayor de San Andrés</p>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>Especialización</h4>
+                                <p>Ginecología y Obstetricia</p>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Certificación</h4>
+                                <p>Colegio Médico de Bolivia</p>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <i class="fas fa-user-check"></i>
+                            <div>
+                                <h4>Experiencia</h4>
+                                <p>+15 años de práctica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN SERVICIOS MÉDICOS
+         Grid de tarjetas con servicios ofrecidos
+         ========================================== -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Servicios Médicos</h2>
+                <div class="title-underline"></div>
+                <p class="section-description">
+                    Atención integral y personalizada en todas las áreas de la salud femenina
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Servicio 1 -->
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Control Prenatal</h3>
+                    <p>Seguimiento completo del embarazo para garantizar la salud de madre y bebé</p>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Ginecología General</h3>
+                    <p>Consultas preventivas, diagnóstico y tratamiento de patologías ginecológicas</p>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <h3>Planificación Familiar</h3>
+                    <p>Asesoría personalizada en métodos anticonceptivos y salud reproductiva</p>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Ultrasonidos Obstétricos</h3>
+                    <p>Ecografías de alta resolución para el monitoreo del desarrollo fetal</p>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-medical"></i>
+                    </div>
+                    <h3>Atención de Parto</h3>
+                    <p>Acompañamiento profesional en el momento más importante de tu vida</p>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <h3>Cirugía Ginecológica</h3>
+                    <p>Procedimientos quirúrgicos con técnicas mínimamente invasivas</p>
+                </div>
+
+                <!-- Servicio 7 -->
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3>Menopausia</h3>
+                    <p>Tratamiento y manejo de síntomas para mejorar tu calidad de vida</p>
+                </div>
+
+                <!-- Servicio 8 -->
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-venus"></i>
+                    </div>
+                    <h3>Salud Reproductiva</h3>
+                    <p>Evaluación y tratamiento de fertilidad y salud sexual femenina</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         INFORMACIÓN PRÁCTICA
+         Horarios, ubicación y datos de contacto
+         ========================================== -->
+    <section class="info-practice" id="informacion">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Información Práctica</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="info-grid">
+                <!-- Horarios -->
+                <div class="info-card" data-animate>
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Horarios de Atención</h3>
+                    <div class="info-details">
+                        <p><strong>Lunes a Viernes:</strong></p>
+                        <p>9:00 AM - 1:00 PM</p>
+                        <p>3:00 PM - 7:00 PM</p>
+                        <p><strong>Sábados:</strong></p>
+                        <p>9:00 AM - 1:00 PM</p>
+                        <p class="closed">Domingos cerrado</p>
+                    </div>
+                </div>
+
+                <!-- Ubicación -->
+                <div class="info-card" data-animate>
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Ubicación</h3>
+                    <div class="info-details">
+                        <p><strong>Dirección:</strong></p>
+                        <p>Av. Principal #123</p>
+                        <p>Edificio Médico, Piso 3</p>
+                        <p>La Paz, Bolivia</p>
+                        <a href="https://maps.google.com" target="_blank" class="btn btn-outline btn-small">
+                            <i class="fas fa-directions"></i> Ver en Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div class="info-card" data-animate>
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Contacto</h3>
+                    <div class="info-details">
+                        <p><strong>Teléfono:</strong></p>
+                        <p><a href="tel:+59170123456">+591 70 123 456</a></p>
+                        <p><strong>Email:</strong></p>
+                        <p><a href="mailto:drperez@gmail.com">drperez@gmail.com</a></p>
+                        <p><strong>WhatsApp:</strong></p>
+                        <p><a href="https://wa.me/59170123456" target="_blank">+591 70 123 456</a></p>
+                    </div>
+                </div>
+
+                <!-- Seguros -->
+                <div class="info-card" data-animate>
+                    <div class="info-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Seguros Aceptados</h3>
+                    <div class="info-details">
+                        <p>CNS - Caja Nacional de Salud</p>
+                        <p>Seguros Alianza</p>
+                        <p>La Vitalicia Seguros</p>
+                        <p>Bisa Seguros</p>
+                        <p>Consultas particulares</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa de Google Maps -->
+            <div class="map-container" data-animate>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.3643654722647!2d-68.13455908512727!3d-16.500031288621945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f206b7d1e8c1f%3A0x8c8e0b6e6e6e6e6e!2sLa%20Paz%2C%20Bolivia!5e0!3m2!1ses!2sus!4v1234567890123!5m2!1ses!2sus" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación del consultorio">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         LLAMADA A LA ACCIÓN (CTA)
+         Sección destacada para agendar cita
+         ========================================== -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content" data-animate>
+                <h2 class="cta-title">¿Lista para tu Consulta?</h2>
+                <p class="cta-text">
+                    Tu salud es lo más importante. Agenda tu cita hoy mismo y recibe atención 
+                    profesional personalizada en un ambiente de confianza y respeto.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contacto" class="btn btn-white btn-large">
+                        <i class="fas fa-calendar-check"></i>
+                        Agendar Cita Ahora
+                    </a>
+                    <a href="https://wa.me/59170123456?text=Hola,%20deseo%20agendar%20una%20cita" 
+                       class="btn btn-outline-white btn-large" 
+                       target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp Directo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN CONTACTO
+         Formulario y datos de contacto
+         ========================================== -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contáctame</h2>
+                <div class="title-underline"></div>
+                <p class="section-description">
+                    Completa el formulario y me pondré en contacto contigo a la brevedad
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Formulario de contacto -->
+                <div class="contact-form-wrapper" data-animate>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="nombre">
+                                <i class="fas fa-user"></i>
+                                Nombre Completo *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="nombre" 
+                                name="nombre" 
+                                required 
+                                placeholder="Tu nombre completo">
+                            <span class="error-message" id="nombreError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">
+                                <i class="fas fa-phone"></i>
+                                Teléfono *
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="telefono" 
+                                name="telefono" 
+                                required 
+                                placeholder="Ej: 70123456">
+                            <span class="error-message" id="telefonoError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email *
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required 
+                                placeholder="tu@email.com">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">
+                                <i class="fas fa-comment-medical"></i>
+                                Motivo de Consulta *
+                            </label>
+                            <textarea 
+                                id="mensaje" 
+                                name="mensaje" 
+                                rows="5" 
+                                required 
+                                placeholder="Describe brevemente el motivo de tu consulta..."></textarea>
+                            <span class="error-message" id="mensajeError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+
+                    <!-- Mensaje de éxito (oculto por defecto) -->
+                    <div id="successMessage" class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>¡Mensaje Enviado!</h3>
+                        <p>Gracias por contactarme. Te responderé a la brevedad.</p>
+                    </div>
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="contact-info" data-animate>
+                    <div class="contact-info-card">
+                        <h3>Información de Contacto</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Dirección</h4>
+                                <p>Av. Principal #123<br>Edificio Médico, Piso 3<br>La Paz, Bolivia</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Teléfono</h4>
+                                <p><a href="tel:+59170123456">+591 70 123 456</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:drperez@gmail.com">drperez@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>WhatsApp</h4>
+                                <p><a href="https://wa.me/59170123456" target="_blank">+591 70 123 456</a></p>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         Información final y enlaces
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Columna 1: Información del doctor -->
+                <div class="footer-col">
+                    <h3>
+                        <i class="fas fa-user-md"></i>
+                        Dr. Juan Pérez García
+                    </h3>
+                    <p>Ginecólogo - Obstetra</p>
+                    <p>Cédula Profesional: 1234567</p>
+                    <p class="footer-tagline">Comprometido con tu salud y bienestar</p>
+                </div>
+
+                <!-- Columna 2: Enlaces rápidos -->
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="#sobre-mi"><i class="fas fa-chevron-right"></i> Sobre Mí</a></li>
+                        <li><a href="#servicios"><i class="fas fa-chevron-right"></i> Servicios</a></li>
+                        <li><a href="#informacion"><i class="fas fa-chevron-right"></i> Información</a></li>
+                        <li><a href="#contacto"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto -->
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Av. Principal #123, La Paz
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+59170123456">+591 70 123 456</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:drperez@gmail.com">drperez@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Redes sociales -->
+                <div class="footer-col">
+                    <h4>Sígueme</h4>
+                    <div class="footer-social">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://wa.me/59170123456" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Separador -->
+            <div class="footer-divider"></div>
+
+            <!-- Copyright y disclaimer -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; <span id="currentYear"></span> Dr. Juan Pérez García. Todos los derechos reservados.
+                </p>
+                <p class="footer-disclaimer">
+                    <i class="fas fa-info-circle"></i>
+                    Este sitio es solo informativo y no sustituye una consulta médica profesional.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         SCRIPT JAVASCRIPT
+         ========================================== -->
+    <script src="script.js"></script>
+</body>
+</html>
